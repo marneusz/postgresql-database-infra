@@ -1,0 +1,9 @@
+services:
+  postgres_db:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+
+networks:
+  postgres_network:
+    driver: bridge
