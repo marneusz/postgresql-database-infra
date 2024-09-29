@@ -29,4 +29,69 @@ Create `.env` files for different environments (e.g., `local.env`, `staging.env`
 
 ### Start the Database
 
-TODO
+To start the database, run the following commands:
+
+```bash
+cd docker
+docker-compose up -d
+```
+
+This will start the PostgreSQL container in detached mode.
+
+### Access the Database
+
+To access the database, you can use the following command:
+
+```bash
+docker exec -it postgres_db bash
+```
+
+And to connect to the database, you can use the following command:
+
+```bash
+psql -U $POSTGRES_USER -d $POSTGRES_DB
+```
+
+### Stop the Database
+
+To stop the database, run the following command:
+
+```bash
+docker-compose down
+```
+
+This will stop the PostgreSQL container and remove the container.
+
+## PostreSQL
+
+### Commands
+
+- Listing all databases:
+
+```bash
+\l
+```
+
+- Connecting to a database:
+
+```bash
+\c database_name;
+```
+
+- Listing all tables:
+
+```bash
+\dt
+```
+
+- Listing all columns of a table:
+
+```bash
+\d table_name;
+```
+
+- Quitting the database:
+
+```bash
+\q
+```
